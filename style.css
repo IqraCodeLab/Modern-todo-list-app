@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+h2 {
+    color: #fff;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 img {
+    width: 35px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.row:focus-within {
+    transform: scale(1.02);
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    padding: 15px 0;
+    color: #333;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #e64e3c;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+#clear-all {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 15px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#clear-all:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 45px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    margin-bottom: 10px;
+    border-radius: 12px;
+    color: #333;
+    transition: all 0.3s;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+ul li:hover {
+    background: #fff;
+    transform: translateX(5px);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid #ff5945;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+ul li.check {
+    color: #888;
+    text-decoration: line-through;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+ul li.check::before {
+    background: #ff5945;
+    border-color: #ff5945;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+}
+
+ul li span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    color: #555;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+ul li span:hover {
+    background: rgba(255, 89, 69, 0.1);
+    color: #ff5945;
+}
