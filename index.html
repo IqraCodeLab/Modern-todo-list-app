@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="todo-app">
+        <h2>To-Do List <img src="Images/log.jpg" alt=""></h2>
+        <div class="row">
+          <input type="text" id="input" placeholder="Add your task...">
+          <button onclick="addTask()">Add Task</button>
+        </div>
+        
+        <div class="counter-container">
+          <p>Total: <span id="total-count">0</span></p>
+          <p>Completed: <span id="completed-count">0</span></p>
+          <button id="clear-all" onclick="clearAll()">Clear All</button>
+        </div>
+
+        <ul id="List">
+          <!-- Tasks will be injected here -->
+        </ul>
+      </div>
+  <script src="script.js"></script>
+</body>
+</html>
